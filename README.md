@@ -10,7 +10,7 @@
 *** I'm using markdown "reference style" links for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.5 18.203125 "/></g></g></g></svg>
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
@@ -29,7 +29,7 @@
     <img src="https://raw.githubusercontent.com/henseljahja/henseljahja/main/assets/hensel.svg" alt="Logo" width="200" height="200">
   </a>
 
-  <h2 align="center">Sentiment Analysis using Spark & Tensorflow</h2>
+  <h2 align="center">Sentiment Analysis using Tensorflow and Spark  </h2>
   
 <h2 align="center">
 
@@ -154,7 +154,7 @@ You need to install these dependency
 
    - Kindle Reviews dataset
 
-   ```
+   ```sh
    kaggle datasets download -d bharadwaj6/kindle-reviews
    ```
 
