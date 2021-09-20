@@ -9,12 +9,12 @@ from nltk.stem import SnowballStemmer
 from .config import CWD
 
 
-class Preprocessing:
+class CleanText:
     def __init__(self, df: pd.Dataframe):
         self.df = df
         nltk.download("stopwords")
 
-    def clean_text(self):
+    def _clean_text(self):
         self.df["text"] = self.df["reviewText"]
         self.df["sentiment"] = self.df["overall"]
         self.df.drop(self.df.columns[:-2], axis=1, inplace=True)
@@ -23,8 +23,10 @@ class Preprocessing:
         self.df.drop(self.df[self.df["sentiment"] == -2147483648].index, inplace=True)
         self.df["sentiment"] = self.df["sentiment"].replace([1, 2, 3], "Negative")
         self.df["sentiment"] = self.df["sentiment"].replace([4, 5], "Positive")
+        self.df.dropna(axis=0, how="any", inplace=True)
+        self.df["text"] = self.df["text"].astype(str)
 
-    def preprocessing(self, text: str):
+    def _preprocessing(self, text: str):
         stem = False
         stop_words = stopwords.words("english")
         stemmer = SnowballStemmer("english")
@@ -39,7 +41,12 @@ class Preprocessing:
                     tokens.append(token)
         return " ".join(tokens)
 
-    def run(self):
-        self.clean_text()
+    def _run(self):
+        self._clean_text()
         self.df.text = self.df.text.apply(lambda x: self.preprocessing(x))
         self.df.to_csv(f"{CWD}/preprocessed_data.csv", index=False)
+
+    def get_df(self):
+        self._clean_text()
+        self._run()
+        return self.df

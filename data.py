@@ -8,10 +8,10 @@ class Data:
     def __init__(self, csv_path: str) -> None:
         self.csv_path = csv_path
 
-    def get_session(self) -> Any:
+    def _get_session(self) -> Any:
         findspark.init()
         findspark.find()
-        spark = (
+        self.spark = (
             pyspark.sql.SparkSession.builder.master("local")
             .appName("Colab")
             .config("spark.ui.port", "4050")
@@ -19,11 +19,12 @@ class Data:
             .config("spark.driver.maxResultSize", "10G")
             .getOrCreate()
         )
-        spark.sparkContext.setLogLevel("ALL")
-        return spark
+        return self.spark
 
     def read_csv(self) -> Any:
-        return self.get_session().read.csv(self.csv_path)
+        self._get_session()
+        return self.spark.read.csv(self.csv_path)
 
     def to_pandas(self) -> Any:
-        return self.read_csv.select("*").toPandas()
+        spark_df = self.read_csv()
+        return spark_df.select("*").toPandas()

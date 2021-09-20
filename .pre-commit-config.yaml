@@ -3,14 +3,17 @@ repos:
     rev: 20.8b1
     hooks:
       - id: black
+        # args: [--config, ./setup.cfg]
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.4
     hooks:
       - id: flake8
+        args: [--config, ./setup.cfg]
   - repo: https://github.com/timothycrosley/isort
     rev: 5.7.0
     hooks:
       - id: isort
+        # args: [--config, ./setup.cfg]
   # - repo: https://github.com/econchick/interrogate
   #   rev: 1.4.0
   #   hooks:

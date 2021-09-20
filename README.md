@@ -26,11 +26,18 @@
 <br />
 <p align="center">  
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://raw.githubusercontent.com/henseljahja/henseljahja/main/assets/hensel.svg" alt="Logo" width="300" height="250">
+    <img src="https://raw.githubusercontent.com/henseljahja/henseljahja/main/assets/hensel.svg" alt="Logo" width="200" height="200">
   </a>
 
   <h2 align="center">Sentiment Analysis using Spark & Tensorflow</h2>
+  
+<h2 align="center">
 
+<!-- [![MIT License][license-shield]][license-url] -->
+
+[![Open In Colab][colab-shield]][colab-url]
+
+</h2>
   <p align="center">
     Sentiment Analysis, with spark as resilient data loader, and Tensorflow multiworker for distributed training
     <!-- <br /> -->
@@ -95,7 +102,9 @@ You need to install these dependency
 - [Python](python.org)
 - [Kaggle Api](https://github.com/Kaggle/kaggle-api)
 
-- [Poetry](https://python-poetry.org/docs/#installation)
+  Optional
+
+  - [Poetry](https://python-poetry.org/docs/#installation)
 
 # Installation
 
@@ -135,11 +144,17 @@ You need to install these dependency
    poetry install
    ```
 
+   or
+
+   ```sh
+   pip install -r requirements.txt
+   ```
+
 5. Get the data
 
    - Kindle Reviews dataset
 
-   ```sh
+   ```
    kaggle datasets download -d bharadwaj6/kindle-reviews
    ```
 
@@ -182,7 +197,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/henseljahja/sentiment-analysis-lstm-tensorflow/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/github.com/henseljahja/sentiment-analysis-lstm-tensorflow/issues
+[issues-url]: https://github.com/henseljahja/sentiment-analysis-lstm-tensorflow/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
@@ -193,3 +208,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [gmail-url]: henseljahja@gmail.com
 [gmail-shield]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
 [scikitlearn-shield]: https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white
+[colab-shield]: https://colab.research.google.com/assets/colab-badge.svg
+[colab-url]: https://colab.research.google.com/github/henseljahja/sentiment-analysis-lstm-tensorflow/blob/main/LSTM-sentiment-analysis.ipynb
