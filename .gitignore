@@ -139,3 +139,7 @@ cython_debug/
 
 ## env
 sentiment_analysis/
+env/
+
+# Intelij
+.idea/

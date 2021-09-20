@@ -1,8 +1,8 @@
-from .clean_text import CleanText
 from .config import DATA_PATH
-from .data import Data
-from .model import Model
-from .plot import Plot
+from .data.data import Data
+from .models.lstm import Model
+from .plot.plot import Plot
+from .preprocessing.clean_text import CleanText
 from .tokenization import Tokenization
 from .word_embedding import WordEmbedding
 

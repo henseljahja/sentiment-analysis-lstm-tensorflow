@@ -3,9 +3,11 @@ from typing import Literal
 
 CWD = os.getcwd()
 
-DATA_PATH = os.path.join(CWD, "data/kindle_reviews.csv")
-GLOVE_PATH = os.path.join(CWD, "data/glove.6B.50d.txt")
-MODEL_PATH = os.path.join(CWD, "data/model.h5")
+MODEL_NAME = "lstm"
+
+DATA_PATH = f"/data/kindle_reviews.csv"
+GLOVE_PATH = f"/data/glove.6B.50d.txt"
+MODEL_PATH = f"/data/'MODEL_NAME'.h5"
 
 SEED: int = 42
 
