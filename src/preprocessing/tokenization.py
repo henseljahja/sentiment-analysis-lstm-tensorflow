@@ -28,14 +28,10 @@ class Tokenization:
 
     def _pad_sequence(self):
         self.train = pad_sequences(
-            self.tokenizer.texts_to_sequences(
-                self.train.text, maxlen=MAX_SEQUENCE_LENGTH
-            )
+            self.tokenizer.texts_to_sequences(self.train.text, maxlen=MAX_SEQUENCE_LENGTH)
         )
         self.test = pad_sequences(
-            self.tokenizer.texts_to_sequences(
-                self.test.text, maxlen=MAX_SEQUENCE_LENGTH
-            )
+            self.tokenizer.texts_to_sequences(self.test.text, maxlen=MAX_SEQUENCE_LENGTH)
         )
 
     def _get_labels(self):
@@ -49,9 +45,9 @@ class Tokenization:
         self.train_labels = encoder.transform(
             self.train_data.sentiment.to_list()
         ).reshape(-1, 1)
-        self.test_labels = encoder.transform(
-            self.test_data.sentiment.to_list()
-        ).reshape(-1, 1)
+        self.test_labels = encoder.transform(self.test_data.sentiment.to_list()).reshape(
+            -1, 1
+        )
 
     def get_result(self):
         self._split()
