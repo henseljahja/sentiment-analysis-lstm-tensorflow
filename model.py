@@ -27,7 +27,7 @@ from .tokenization import Tokenization
 class Model:
     def __init__(self, df: pd.DataFrame):
         self.df = df
-        self.vocab_size = Tokenization(self.df).vocab_size
+        _, self.vocab_size = Tokenization(self.df).get_tokenizer()
 
     def build_model(self):
         embedding_layer = Embedding(self.vocab_size, EMBEDDING_DIM)
